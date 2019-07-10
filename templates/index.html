@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BEST FRIEND CALCULATOR</title>
+    </head>
+    <body>
+    
+        <h1>BEST FRIEND CALCULATOR</h1>
+        <h2>Averigua si eres "un best friend" o "EL BEST FRIEND"</h2>
+        
+        {% if name != None and name != '' %}
+            {% if bf %}
+                <br>
+                <h1>ERES EL BEST FRIEND! ENHORABUENA</h1>
+            {% else %}
+                <br>
+                <h1>#TOP999 :/</h1>
+            {% endif %}
+        {% endif %}
+        
+        <form action="{{ url_for('index') }}" method="post">
+            <input type="text" name="name" placeholder="Introduce tu nombre">
+            <button>Enviar!</button>
+        </form>
+    
+    </body>
+</html>
