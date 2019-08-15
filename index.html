@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                display: none;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                document.querySelector('#form').onsubmit = () => {
+
+                    // Create new item for list
+                    const name = document.querySelector('input').value;
+                    const alvaro = ['varo', 'Varo', 'VARO', 'Alvaro', 'Álvaro', 'alvaro', 'álvaro', 'ALVARO', 'ÁLVARO', 'varito', 'Varito', 'VARITO']
+                    const luis = ['luis', 'Luis', 'LUIS', 'luis4793', 'Luis4793', 'LUIS4793']
+                    const pablo = ['pablo', 'Pablo', 'PABLO']
+                    const david = ['david', 'DAVID', 'David', 'sent', 'Sent', 'SENT']
+                    const alvaro_ind = alvaro.indexOf(name, 0)
+                    const luis_ind = luis.indexOf(name, 0)
+                    const pablo_ind = pablo.indexOf(name, 0)
+                    const david_ind = david.indexOf(name, 0)
+
+                    l = document.getElementById("l");
+                    p = document.getElementById("p");
+
+                    if (alvaro_ind !== -1) {
+                        document.querySelector('#reply').innerHTML = 'BEST FRIEND #TOP1 !!!';
+                        l.style.display = 'none';
+                        p.style.display = 'none';
+                    }
+                    else if (luis_ind !== -1) {
+                        document.querySelector('#reply').innerHTML = '#TOP2 por ponerme los cristales templados y cortarme las hamburguesas!';
+                        l.style.display = 'block';
+                        p.style.display = 'none';
+                    }
+                    else if (pablo_ind !== -1) {
+                        document.querySelector('#reply').innerHTML = '#TOP999 por no ser un NINI de la España que no madruga :/';
+                        p.style.display = 'block';
+                        l.style.display = 'none';
+                    }
+                    else if (david_ind !== -1) {
+                        document.querySelector('#reply').innerHTML = '#TOP999 por llegar siempre TAAAAARDE :/';
+                        l.style.display = 'none';
+                        p.style.display = 'none';
+                    }
+                    else {
+                        document.querySelector('#reply').innerHTML = '#TOP999 por no saber ni quién eres :/';
+                        l.style.display = 'none';
+                        p.style.display = 'none';
+                    }
+                    document.querySelector('input').value = '';
+                    return false;
+                };
+
+            });
+        </script>
+        <title>Best Friend Calculator</title>
+    </head>
+    <body>
+        <h1>Best Friend Calculator</h1>
+        <h2>Averigua en qué puesto estás</h2>
+        <br>
+        <form id="form">
+            <input id="input" autocomplete="off" autofocus placeholder="Escribe tu nombre" type="text">
+            <input type="submit">
+        </form>
+        <h1 id='reply'></h1>
+        <div id='p'><img src="https://muchotrap.com/wp-content/uploads/2019/03/Cecilio-G-04.jpg" alt="cat" width="500"></div>
+        <div id='l'><img src="https://www.totalisimo.com/wp-content/uploads/2018/08/chojin-portada.jpg" alt="cat" width="500"></div>
+
+
+
+    </body>
+</html>
